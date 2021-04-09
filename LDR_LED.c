@@ -45,7 +45,6 @@
 /******************* Globals *****************************/
 
 //Add volatile keyword so the compiler won't optimize these variables out if only used in ISR
-volatile uint16_t LDRvalue = 0;
 
 /******************** Functions **************************/
 
@@ -105,6 +104,9 @@ int main(void)
 	
 	/* Initialize the analog input */
 	ADC_init();
+
+	/* Storage for the LDR value from the ADC */
+	uint16_t LDRvalue = 0;
 	
     /* State machine loop */
     while (1) 
