@@ -57,7 +57,7 @@ void PWM_init(){
 	//Enable Fast PWM Mode
 	TCCR1D = (0<<WGM11)|(0<<WGM10);
 	//Use PLL Clock for PWM Generator
-	PLLCSR |= (1 << PCKE);
+	PLLCSR |= (1 << PCKE)|(1 << PLLE);
 	//Max PWM value possible set though OCR1C
 	OCR1C = 0xFF;
 	return; //Return to call point
